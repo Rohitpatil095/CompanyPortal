@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.office.portal.employee.domain.dto.Dto;
 import com.office.portal.employee.domain.entity.Employee;
-import com.office.portal.employee.infra.Transformer;
 import com.office.portal.employee.infra.repository.EmployeeRepository;
 import com.office.portal.employee.infra.request.CreateEmployeeRequest;
 import com.office.portal.employee.infra.response.CreateEmployeeResponse;
@@ -16,17 +15,19 @@ import com.office.portal.employee.infra.response.CreateEmployeeResponse;
 public class IDBEmployeeImpl implements IDBEmployee{
 	
 	private EmployeeRepository employeeRepo;
-	private Transformer dtoTransformer;
+	private Dto dto;
 	
+
 	@Autowired
-	public IDBEmployeeImpl(EmployeeRepository employeeRepo, Transformer dtoTransformer) {
+	public IDBEmployeeImpl(EmployeeRepository employeeRepo, Dto dto) {
+		super();
 		this.employeeRepo = employeeRepo;
-		this.dtoTransformer=dtoTransformer;
+		this.dto = dto;
 	}
 
 	@Override
 	public Dto createNewEmployee(Dto dto) {
-		Employee newEmployee= dtoTransformer.createEmployee(dto).getEmp();
+		Employee newEmployee= dto.getEmp();
 		System.out.println("----------"+newEmployee.toString());
 		employeeRepo.save(newEmployee);
 		return dto;
@@ -34,14 +35,13 @@ public class IDBEmployeeImpl implements IDBEmployee{
 
 	@Override
 	public List<CreateEmployeeResponse> getAllEmployee() {
-		// TODO Auto-generated method stub
-		return null;
+		return null; // employeeRepo.findAll();
 	}
 
 	@Override
-	public List<CreateEmployeeResponse> getAllEmployeeByEmployeeId(Long empId) {
-		// TODO Auto-generated method stub
-		return null;
+	public CreateEmployeeResponse getEmployeeByEmployeeId(Long empId) {
+		dto.setEmp(employeeRepo.findById(empId).get());
+		return dto.getCreateEmployeeResponse();
 	}
 
 	@Override

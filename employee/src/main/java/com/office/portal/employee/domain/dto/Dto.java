@@ -1,9 +1,12 @@
 package com.office.portal.employee.domain.dto;
 
+import org.springframework.stereotype.Component;
+
 import com.office.portal.employee.domain.entity.Employee;
 import com.office.portal.employee.infra.request.CreateEmployeeRequest;
 import com.office.portal.employee.infra.response.CreateEmployeeResponse;
 
+@Component
 public class Dto {
 	
 	public CreateEmployeeRequest createEmployeeRequest;
@@ -32,8 +35,7 @@ public class Dto {
 	
 	public void setCreateEmployeeResponse(CreateEmployeeResponse createEmployeeResponse) {
 		this.createEmployeeResponse = createEmployeeResponse;
-	} 
-	
-	
+	}
+ 
 
 }

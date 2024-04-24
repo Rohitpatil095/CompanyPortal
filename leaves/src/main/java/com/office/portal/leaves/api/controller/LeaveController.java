@@ -5,6 +5,7 @@ import com.office.portal.leaves.domain.dto.DTO;
 import com.office.portal.leaves.infra.request.ApplyLeaveRequest;
 import com.office.portal.leaves.infra.response.ApplyLeaveResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,13 @@ public class LeaveController {
     @Autowired
     public LeaveController(LeaveBusinessService leaveBusinessService) {
         this.leaveBusinessService = leaveBusinessService;
+    }
+    
+    @GetMapping("/")
+    public String greet()
+    {
+    	System.out.println("doks");
+    	return "greet";
     }
 
     @PostMapping("/applyleave")

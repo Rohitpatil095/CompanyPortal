@@ -29,7 +29,7 @@ public class MailExectorServiceImpl{
 			SimpleMailMessage simpleMailMessage= new SimpleMailMessage();
 			
 			simpleMailMessage.setFrom(mail.getFrom());
-			simpleMailMessage.setTo("rohitpatil099sb@gmail.com");
+			simpleMailMessage.setTo("somemail@gmail.com");
 			simpleMailMessage.setText(mail.getMessage());
 			simpleMailMessage.setSubject(mail.getSubject());
 			

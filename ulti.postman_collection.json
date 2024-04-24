@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "a80bdd9b-9753-4dbf-ac90-c1eeae799ba5",
+		"name": "ulti",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31310796"
+	},
+	"item": [
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "create",
+					"item": [
+						{
+							"name": "newEmployee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"employee_Name\": \"John Doe\",\r\n  \"employee_Address\": \"123 Main St, City, Country\",\r\n  \"contact\": 1234567890,\r\n  \"sec_Contact\": 9876543210,\r\n  \"blood_Group\": \"AB+\",\r\n  \"passport_No\": \"AB123456\",\r\n  \"pan_No\": \"ABCDE1234F\",\r\n  \"aadhar_No\": \"1234 5678 9012\",\r\n  \"supervisor_Name\": \"\",\r\n  \"supervisor_EmpId\": \"EMP001\",\r\n  \"supervisor_Email\": \"jane@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEmployeeById",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"employee_Name\": \"John Doe\",\r\n  \"employee_Address\": \"123 Main St, City, Country\",\r\n  \"contact\": 1234567890,\r\n  \"sec_Contact\": 9876543210,\r\n  \"blood_Group\": \"AB+\",\r\n  \"passport_No\": \"AB123456\",\r\n  \"pan_No\": \"ABCDE1234F\",\r\n  \"aadhar_No\": \"1234 5678 9012\",\r\n  \"supervisor_Name\": \"\",\r\n  \"supervisor_EmpId\": \"EMP001\",\r\n  \"supervisor_Email\": \"jane@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notification",
+					"item": [
+						{
+							"name": "sendLeaveMail",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"subject\":\"kidding\",\r\n\t\"message\":\"Msg\",\r\n\t\"from\":\"rohnya@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/sendLeaveApprovalMail",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"sendLeaveApprovalMail"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "leaves",
+			"item": [
+				{
+					"name": "create",
+					"item": [
+						{
+							"name": "newLeave",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"employeeRef\":\"58938w5032\",\r\n    \"leaveType\":\"sickleave\",\r\n    \"numberOfLeaves\":\"2\",\r\n    \"fromDate\":\"2024-04-24\",\r\n    \"toDate\":\"2024-04-26\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/leaves/applyleave",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"leaves",
+										"applyleave"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLeave",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"employee_Name\": \"John Doe\",\r\n  \"employee_Address\": \"123 Main St, City, Country\",\r\n  \"contact\": 1234567890,\r\n  \"sec_Contact\": 9876543210,\r\n  \"blood_Group\": \"AB+\",\r\n  \"passport_No\": \"AB123456\",\r\n  \"pan_No\": \"ABCDE1234F\",\r\n  \"aadhar_No\": \"1234 5678 9012\",\r\n  \"supervisor_Name\": \"Jane Smith\",\r\n  \"supervisor_EmpId\": \"EMP001\",\r\n  \"supervisor_Email\": \"jane@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notification",
+					"item": [
+						{
+							"name": "sendLeaveMail",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"subject\":\"kidding\",\r\n\t\"message\":\"Msg\",\r\n\t\"from\":\"rohnya@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/sendLeaveApprovalMail",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"sendLeaveApprovalMail"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

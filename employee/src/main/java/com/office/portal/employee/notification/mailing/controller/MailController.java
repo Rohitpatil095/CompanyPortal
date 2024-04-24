@@ -16,6 +16,7 @@ public class MailController {
 	
     @PostMapping("/sendLeaveApprovalMail")
     public String
+    
     sendMail(@RequestBody Mail mail)
     {
         String status

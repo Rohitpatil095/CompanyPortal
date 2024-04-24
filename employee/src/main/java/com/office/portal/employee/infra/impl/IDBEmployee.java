@@ -16,7 +16,7 @@ public interface IDBEmployee {
 	
 	//read
 	public List<CreateEmployeeResponse> getAllEmployee();
-	public List<CreateEmployeeResponse> getAllEmployeeByEmployeeId(Long empId);
+	public CreateEmployeeResponse getEmployeeByEmployeeId(Long empId);
 	public CreateEmployeeRequest getEmployeeBySupervisor_EmpId(Long Supervisor_EmpId);
 	
 	//update
