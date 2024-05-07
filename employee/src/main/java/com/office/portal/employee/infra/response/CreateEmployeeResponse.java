@@ -8,7 +8,6 @@ public class CreateEmployeeResponse {
 	String employee_Name;
 	String supervisor_Name;
 	String supervisor_Email;
-	String msg;
 	
 	public Long getEmployee_Id() {
 		return employee_Id;
@@ -33,13 +32,5 @@ public class CreateEmployeeResponse {
 	}
 	public void setSupervisor_Email(String supervisor_Email) {
 		this.supervisor_Email = supervisor_Email;
-	}
-	public String getMsg() {
-		return msg;
-	}
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-	
-	
+	}	
 }

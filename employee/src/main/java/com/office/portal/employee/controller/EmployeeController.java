@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.office.portal.employee.businessservice.CreateEmployeeBusinessService;
@@ -30,11 +29,11 @@ public class EmployeeController {
 
 
 	@PostMapping("/employee")
-	public CreateEmployeeResponse req(@RequestBody CreateEmployeeRequest Employee)
+	public CreateEmployeeResponse createNewEmployee(@RequestBody CreateEmployeeRequest Employee)
 	{
 		dto.setCreateEmployeeRequest(Employee);
 		createEmployeeBusinessService.createEmployeeService(dto);
-		return dto.createEmployeeResponse;
+		return dto.getCreateEmployeeResponse();
 	}
 	
 	@GetMapping("/getAllEmployees")
@@ -44,8 +43,15 @@ public class EmployeeController {
 	
 	@GetMapping("/getEmployeeByEmployeeId/{id}")
 	public CreateEmployeeResponse getEmployeeByEmployeeId(@PathVariable("id") Long id){
-//		return createEmployeeBusinessService.getEmployeeByIdService(id, dto);
-		return null;
+//		createEmployeeBusinessService.createEmployeeService(id, dto);
+		createEmployeeBusinessService.getEmployeeByIdService(id, dto);
+//		dto.getCreateEmployeeResponse();
+		return dto.getCreateEmployeeResponse();
 	}
 	
+//	@GetMapping("/getAllEmplIdForLeaveStatusPending")
+//	public List<Long> GetAllEmplIdForLeaveStatusPending()
+//	{
+//		
+//	}
 }

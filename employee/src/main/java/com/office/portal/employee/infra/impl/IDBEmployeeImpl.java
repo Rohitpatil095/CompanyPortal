@@ -61,6 +61,20 @@ public class IDBEmployeeImpl implements IDBEmployee{
 		// TODO Auto-generated method stub
 		
 	}
+
+//	@Override
+//	public List<int[]> employeeWatingForLeaveApproval() {
+//		List<int[]> emp=employeeRepo.getEmpListPendingForLeaveApproval();
+//		return emp;
+//		{[35,7],[2,3]}
+//		emp.stream()
+//			.map(empl -> empl[0]!=0 && empl[1]!=0
+//			).forEach(
+//					
+//					
+//					 );	;
+		
+//	}
 	
 
 }

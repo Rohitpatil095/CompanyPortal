@@ -1,5 +1,7 @@
 package com.office.portal.employee.businessservice;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,16 +64,12 @@ public class CreateEmployeeBusinessService {
 
 		if(!checkIsSupervisorDetailsPresent)
 		{
-			createEmployeeResponse.setEmployee_Id(0000l);
-			createEmployeeResponse.setMsg("Supervisor details are missing..");
-			createEmployeeResponse.setEmployee_Name("default");
-			createEmployeeResponse.setSupervisor_Email("default@abc.com");
-			createEmployeeResponse.setSupervisor_Name("defautl-abc");
-			dto.setCreateEmployeeResponse(createEmployeeResponse);
-			transformer.createEmployeeResponse(dto);
+			transformer.createEmployeeResponseTransformer(dto,checkIsSupervisorDetailsPresent);
 			return dto;
 		}
 		dto =transformer.createEmployee(dto);
+		transformer.createEmployeeResponseTransformer(dto,checkIsSupervisorDetailsPresent);
+		
 		idbemployee.createNewEmployee(dto);
 //		transformer.createEmployeeResponse(dto);
 		return dto;
@@ -91,10 +89,14 @@ public class CreateEmployeeBusinessService {
 			createEmployeeResponse.setEmployee_Name("default");
 			createEmployeeResponse.setSupervisor_Email("default@abc.com");
 			createEmployeeResponse.setSupervisor_Name("defautl-abc");
-			createEmployeeResponse.setMsg("User Not found..");
 			dto.setCreateEmployeeResponse(createEmployeeResponse);
 		}
 		dto.setCreateEmployeeResponse(createEmployeeResponse);
 		return dto;
 	}
+	
+//	public List<Long> retriveAllEmpWaitingForLeaveApproval()
+//	{
+//		
+//	}
 }

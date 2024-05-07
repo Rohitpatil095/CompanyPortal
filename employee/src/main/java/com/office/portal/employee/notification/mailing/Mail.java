@@ -1,39 +1,44 @@
 package com.office.portal.employee.notification.mailing;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-
+@Component
 public class Mail {
 	
 	String subject;
 	String message;
-	String from;
 	
-	public Mail(String subject, String message, String from) {
-		super();
-		this.subject = subject;
-		this.message = message;
-		this.from = from;
+	@Value("{spring.mail.username}")
+	static String from;
+
+	public String getSubject()
+	{
+		return this.subject;
 	}
 	
-	public String getSubject() {
-		return subject;
+	public String getMessage()
+	{
+		return this.message;
 	}
-	public void setSubject(String subject) {
+	
+	public Mail setSubject(String subject) {
 		this.subject = subject;
+		return this;
 	}
-	public String getMessage() {
-		return message;
-	}
-	public void setMessage(String message) {
+
+	public Mail setMessage(String message) {
 		this.message = message;
+		return this;
 	}
 	public String getFrom() {
 		return from;
 	}
-	public void setFrom(String from) {
-		this.from = from;
+
+	@Override
+	public String toString() {
+		return "Mail [subject=" + subject + ", message=" + message + ", from=" + from + "]";
 	}
-	
-	
+		
 }
+	

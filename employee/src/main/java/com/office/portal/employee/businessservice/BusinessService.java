@@ -11,11 +11,17 @@ public class BusinessService {
 	public boolean isEmployeeSupervisorDetailsPresent(Dto dto)
 	{
 		CreateEmployeeRequest emp=dto.getCreateEmployeeRequest();
-		if(emp.getSupervisor_Email().equals(null) && emp.getSupervisor_EmpId().equals(null))
+		if(emp.getSupervisor_Email().equals(null)
+				&& emp.getSupervisor_Email().isEmpty()
+				&& emp.getSupervisor_EmpId().equals(null) 
+				&& emp.getSupervisor_Name().equals(null)
+				&& emp.getSupervisor_Name().isEmpty())
 		{
-			return true;
+			System.out.println(emp.getSupervisor_Email().equals(null) +" --" +  emp.getSupervisor_EmpId().equals(null));
+			return false;
 		}
-		return false;
+		return true;
 	}
+	
 
 }

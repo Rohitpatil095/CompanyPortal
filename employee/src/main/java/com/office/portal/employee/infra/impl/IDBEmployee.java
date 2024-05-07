@@ -24,4 +24,5 @@ public interface IDBEmployee {
 	
 	//delete
 	public void deleteEmployee(Long empId);
+//	public List<int[]> employeeWatingForLeaveApproval();
 }

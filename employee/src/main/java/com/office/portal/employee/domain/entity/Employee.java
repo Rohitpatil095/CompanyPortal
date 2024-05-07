@@ -15,6 +15,7 @@ public class Employee {
 	
 	@NonNull
 	String employee_Name;
+//	String employee_ref;
 	String employee_Address;
 	
 	@NonNull
@@ -28,6 +29,7 @@ public class Employee {
 	String supervisor_Name;
 	Long supervisor_EmpId;
 	String supervisor_Email;
+	
 	public Long getEmployee_Id() {
 		return employee_Id;
 	}
@@ -40,6 +42,12 @@ public class Employee {
 	public void setEmployee_Name(String employee_Name) {
 		this.employee_Name = employee_Name;
 	}
+//	public String getEmployee_ref() {
+//		return employee_ref;
+//	}
+//	public void setEmployee_ref(String employee_ref) {
+//		this.employee_ref = employee_ref;
+//	}
 	public String getEmployee_Address() {
 		return employee_Address;
 	}
