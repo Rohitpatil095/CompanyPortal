@@ -1,0 +1,6 @@
+[submodule "employee"]
+	path = employee
+	url = https://github.com/Rohitpatil095/employee.git
+[submodule "leaves"]
+	path = leaves
+	url = https://github.com/Rohitpatil095/leaves.git
