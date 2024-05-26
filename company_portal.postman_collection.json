@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "a80bdd9b-9753-4dbf-ac90-c1eeae799ba5",
+		"name": "ulti",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31310796"
+	},
+	"item": [
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "create",
+					"item": [
+						{
+							"name": "newEmployee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"employee_Name\": \"si Doe\",\r\n  \"employee_Address\": \"123 Main St, City, Country\",\r\n  \"contact\": 1234567890,\r\n  \"sec_Contact\": 9876543210,\r\n  \"blood_Group\": \"AB+\",\r\n  \"passport_No\": \"AB123456\",\r\n  \"pan_No\": \"ABCDE1234F\",\r\n  \"aadhar_No\": \"1234 5678 9012\",\r\n  \"supervisor_Name\": \"raghu\",\r\n  \"supervisor_EmpId\": 356,\r\n  \"supervisor_Email\": \"raghu@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "newEmployee Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"id\":2,\r\n    \"employeeName\":\"John Doe\", \r\n    \"leaveType\":\"sick\", \r\n    \"numberOfLeaves\":\"1\",\r\n    \"fromDate\": \"2024-04-01\",\r\n    \"toDate\": \"2024-04-02\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/applyLeave",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"applyLeave"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEmployeeById",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"employee_Name\": \"John Doe\",\r\n  \"employee_Address\": \"123 Main St, City, Country\",\r\n  \"contact\": 1234567890,\r\n  \"sec_Contact\": 9876543210,\r\n  \"blood_Group\": \"AB+\",\r\n  \"passport_No\": \"AB123456\",\r\n  \"pan_No\": \"ABCDE1234F\",\r\n  \"aadhar_No\": \"1234 5678 9012\",\r\n  \"supervisor_Name\": \"\",\r\n  \"supervisor_EmpId\": \"EMP001\",\r\n  \"supervisor_Email\": \"jane@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notification",
+					"item": [
+						{
+							"name": "sendLeaveMail",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"subject\":\"kidding\",\r\n\t\"message\":\"Msg\",\r\n\t\"from\":\"rohnya@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/sendLeaveApprovalMail",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"sendLeaveApprovalMail"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "RetriveEmployee",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/getEmployeeByEmployeeId/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"getEmployeeByEmployeeId",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "leaves",
+			"item": [
+				{
+					"name": "create",
+					"item": [
+						{
+							"name": "newLeave",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"employeeRef\":\"58938w5032\",\r\n    \"leaveType\":\"sickleave\",\r\n    \"numberOfLeaves\":\"2\",\r\n    \"fromDate\":\"2024-04-24\",\r\n    \"toDate\":\"2024-04-26\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/leaves/applyleave",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"leaves",
+										"applyleave"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLeave",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/leaves",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"leaves"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "fetchPendingStatus",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n    \"status\":\"Pending\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/leaves/applyleave/fetchPendingRecords",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"leaves",
+										"applyleave",
+										"fetchPendingRecords"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notification",
+					"item": [
+						{
+							"name": "sendLeaveMail",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"subject\":\"kidding\",\r\n\t\"message\":\"Msg\",\r\n\t\"from\":\"rohnya@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/sendLeaveApprovalMail",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"sendLeaveApprovalMail"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "attendance",
+			"item": [
+				{
+					"name": "fillNewAttendance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"employeeRef\": \"raw_01\",\r\n\t\"date\": \"2024-05-23\",\r\n\t\"hours\": \"9\",\r\n\t\"task\": \"devops\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/attendance/fillAttendace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"attendance",
+								"fillAttendace"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
